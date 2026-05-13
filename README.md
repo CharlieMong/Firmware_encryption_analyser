@@ -104,7 +104,7 @@ If the browser does not open automatically, copy the `http://127.0.0.1:<port>` U
 ```bash
 git clone https://github.com/your-org/firmware-analyser.git
 cd firmware-analyser
-go build -o firmware-analyser .
+go build -o firmware-analyser.exe .
 ```
 
 ### Cross-compile for all platforms
@@ -145,6 +145,8 @@ The binary embeds a complete web application and HTTP server. On launch it:
 4. Accepts firmware uploads via `multipart/form-data` POST to `/analyse`
 5. Returns JSON analysis results; the UI renders them client-side
 6. Serves decrypted files and string exports as HTTP downloads
+<img width="1877" height="686" alt="image" src="https://github.com/user-attachments/assets/8eea4ceb-d538-42f5-a49f-4a954ebb3ec1" />
+
 
 All processing happens in the Go backend — entropy calculation, XOR brute-force, magic byte matching, and string extraction. The frontend is plain HTML/CSS/JS with no external dependencies.
 
